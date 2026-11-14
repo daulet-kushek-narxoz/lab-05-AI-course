@@ -1,0 +1,6 @@
+# Keep LF in the repo regardless of OS (matches upstream)
+* text=auto eol=lf
+*.ipynb text eol=lf linguist-language=Jupyter\ Notebook
+*.csv   text eol=lf
+*.py    text eol=lf
+*.md    text eol=lf
