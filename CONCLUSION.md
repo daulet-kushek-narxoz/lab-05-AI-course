@@ -23,6 +23,18 @@ number of correct answers, say so and explain what the layers did change instead
 
 (write here)
 
+| Config | Correct | Wrong | No answer |
+|---|---:|---:|---:|
+| bare | 15 | 5 | 4 | 
+| + layer 1 | 15 | 9 | 0 |
+| + layer 2 | 15 | 8 | 1 |
+| + layer 3 | 10 | 4 | 10 |
+layer 1 - the model started answering alias-questions but some of the answers turned out to be wrong
+layer 2- practically didn't affect the result
+one question went from wrong to no answer
+layer 3 reduced the number of wrong answers but at the same time lost five correct answers because of the strict ANSWER format check
+no one layer add + correct answer but it divided beetwin it 
+
 ## 2. One failure the full harness did not fix
 
 Pick one question that the full harness (layer 3) still gets wrong or refuses. Give its id
@@ -31,6 +43,14 @@ the model do instead? Name one thing you would add to the harness, and what it w
 (extra model calls, tokens, time, or a new way to fail).
 
 (write here)
+
+I choose q12, the first step was correct and the model called get_series(Pavlodar, avg_monthly_wage, 2020, 2025) and got all needed values
+the mistake happened in the calculation step, instead of using the 2025 value it used the 2021 value and also reversed the formula, because of that it produced -11.2457% which is wrong
+layer 3 did not catch this because all numbers came from tool outputs
+the answer was grounded but not correct
+one thing I would add is a simple check that verifies the years used in the calculation match the years from the question
+the cost would be extra logic or one more model call which means more tokens and more time.
+
 
 ## 3. Workflow or agent for the monthly ranking?
 
@@ -41,6 +61,6 @@ what kind of question would make you choose the other one.
 
 (write here)
 
----
+I would ship the workflow, t--,i and
 
 I wrote this file myself, without any AI tool.
