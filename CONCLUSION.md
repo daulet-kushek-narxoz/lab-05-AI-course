@@ -61,6 +61,10 @@ what kind of question would make you choose the other one.
 
 (write here)
 
-I would ship the workflow, t--,i and
+I would ship the workflow
+the workflow got 13 correct 0 wrong and 2 no answer while the agent got 9 correct 2 wrong and 4 no answer
+it needed only 15 model calls instead of 26 used 3852 tokens instead of 20167 and finished in 30.6s instead of 89.2s
+for this task the question format is always known so workflow is cheaper faster and more accurate
+I would choose the agent only for more open questions like growth calculations missing data or questions that need several tool calls and extra reasoning steps
 
 I wrote this file myself, without any AI tool.
